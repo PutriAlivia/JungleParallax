@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Parralax Scrolling Website | Vanilla Javascript</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <header>
+            <a href="#" class="logo">Logo</a>
+            <ul>
+                <li><a href="#" class="active">Home </a></li>
+                <li><a href="#">About </a></li>
+                <li><a href="#">Destination </a></li>
+                <li><a href="#">Contact </a></li>
+            </ul>
+        </header>
+        <section>
+            <img src="bird1.png" id="bird1" >
+            <img src="bird2.png" id="bird2">
+            <img src="forest.png" id="forest">
+            <img src="rocks.png" id="rocks">
+            <img src="water.png" id="water">
+            <h2 id="text"><span>Its time for a new </span> <br>Adventure</h2>
+            <a href="#sec" id="btn">Explore</a>
+        </section>
+        <div class="sec" id="sec">
+            <h2>Parralax Scrolling Effect</h2>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Curabitur varius ultrices vestibulum. Fusce convallis lorem non semper vulputate. 
+                Praesent velit diam, vehicula nec tellus non, venenatis pharetra augue. 
+                Maecenas egestas justo vitae sapien lacinia mollis. 
+                Cras a sodales mauris, sit amet rhoncus urna. 
+                Maecenas imperdiet accumsan augue ut hendrerit. 
+                Morbi a posuere odio. Nunc imperdiet, 
+                turpis eu condimentum interdum, mauris sem sodales felis, 
+                maximus facilisis justo enim et urna.<br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Curabitur varius ultrices vestibulum. Fusce convallis lorem non semper vulputate. 
+                Praesent velit diam, vehicula nec tellus non, venenatis pharetra augue. 
+                Maecenas egestas justo vitae sapien lacinia mollis.<br><br>Nunc nec semper dolor. 
+                Curabitur porta nunc est, nec accumsan augue consectetur nec. 
+                Nulla velit orci, bibendum sit amet tempor in, facilisis at mi. 
+                Phasellus commodo sit amet eros lobortis rutrum. Morbi urna orci, 
+                pellentesque at nisi ut, malesuada scelerisque ligula. Ut sed nibh lectus. 
+                Suspendisse sit amet interdum tortor. Ut convallis, 
+                neque sed blandit ultrices, neque quam aliquam eros, 
+                ac tempor purus eros eu ligula. Phasellus quam arcu, 
+                eleifend a ultricies sit amet, feugiat vel justo. <br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Curabitur varius ultrices vestibulum. Fusce convallis lorem non semper vulputate. 
+                Praesent velit diam, vehicula nec tellus non, venenatis pharetra augue. 
+                Maecenas egestas justo vitae sapien lacinia mollis. 
+                Cras a sodales mauris, sit amet rhoncus urna. 
+                Maecenas imperdiet accumsan augue ut hendrerit. 
+                Morbi a posuere odio. Nunc imperdiet, 
+                turpis eu condimentum interdum, mauris sem sodales felis, 
+                maximus facilisis justo enim et urna.</p>
+        </div>
+        <script>
+            let header = document.querySelector('header');
+            let bird1 = document.getElementById('bird1');
+            let bird2 = document.getElementById('bird2');
+            let rocks = document.getElementById('rocks');
+            let forest = document.getElementById('forest');
+            let water = document.getElementById('water');
+            let text = document.getElementById('text');
+            let btn= document.getElementById('btn');
+
+            window.addEventListener('scroll', function(){
+                let value = window.scrollY;
+                text.style.top = 50 + value * -0.5 + '%';
+                bird1.style.top = value * 1.5+ 'px';
+                bird2.style.top = value * 2+ 'px';
+                btn.style.marginTop = value * 1.5 + 'px';
+                rocks.style.top = value * 0.12 +'px';
+                forest.style.top = value * 0.25 +'px';
+                header.style.top = value * 0.5 + 'px';
+            })
+        </script>
+    </body>
+</html>
